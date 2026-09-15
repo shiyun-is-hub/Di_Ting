@@ -25,7 +25,7 @@ class LicenseActivity : AppCompatActivity() {
          * 在线许可页地址（部署后可指向你的网站 / GitHub Pages）。
          * 当前为占位地址，发布前请替换为实际地址。
          */
-        private const val ONLINE_URL = "https://shiyun-is-hub.github.io/Diting/LICENSE.html"
+        private const val ONLINE_URL = "https://shiyun-is-hub.github.io/Di_Ting/LICENSE.html"
 
         /** 内置离线副本（assets） */
         private const val ASSET_PATH = "file:///android_asset/LICENSE.html"

@@ -26,7 +26,7 @@ class AboutActivity : AppCompatActivity() {
 
     companion object {
         /** 在线开源许可页地址（发布前替换为实际地址，与 assets/LICENSE.html 内容一致） */
-        private const val ONLINE_LICENSE_URL = "https://shiyun-is-hub.github.io/Diting/LICENSE.html"
+        private const val ONLINE_LICENSE_URL = "https://shiyun-is-hub.github.io/Di_Ting/LICENSE.html"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -68,7 +68,7 @@
 我们希望你录屏时，也能像它一样——安静、清晰、无所遗漏。
 
 ■ 开源与反馈
-· 开源地址：https://github.com/shiyun-is-hub/Diting
+· 开源地址：https://github.com/shiyun-is-hub/Di_Ting
 · 反馈邮箱：shiyun_78@proton.me
 · 酷安账号：嘿鹰隼
 
@@ -123,7 +123,7 @@ v1.0.0（首个正式版）
 | 是否含第三方 SDK？ | **无**（仅开源运行库） |
 | 权限用途 | 录屏(MediaProjection)、录音(RECORD_AUDIO)、通知(POST_NOTIFICATIONS)、Shizuku(可选) |
 | 数据存储位置 | 全部在设备本地，卸载即清除 |
-| 隐私政策地址 | https://shiyun-is-hub.github.io/Diting/LICENSE.html （或应用内查看） |
+| 隐私政策地址 | https://shiyun-is-hub.github.io/Di_Ting/LICENSE.html （或应用内查看） |
 
 ---
 
@@ -132,5 +132,5 @@ v1.0.0（首个正式版）
 ```
 反馈邮箱：shiyun_78@proton.me
 酷安账号：嘿鹰隼
-开源仓库：https://github.com/shiyun-is-hub/Diting
+开源仓库：https://github.com/shiyun-is-hub/Di_Ting
 ```

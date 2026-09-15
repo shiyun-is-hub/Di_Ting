@@ -126,7 +126,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/shiyun-is-hub/Diting.git
+git clone https://github.com/shiyun-is-hub/Di_Ting.git
 cd Diting
 
 # 配置签名（可选，见下方说明）
