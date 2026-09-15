@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07090e">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="谛听 Diting：一款专注于本地录制、隐私和用户控制的开源 Android 录屏工具。">
+  <title>谛听 Diting · 听见你的屏幕</title>
+  <style>
+    :root{
+      --bg:#05070b; --bg2:#090c13; --panel:rgba(15,19,29,.68);
+      --line:rgba(160,178,220,.13); --text:#f4f7ff; --muted:#8d97aa;
+      --blue:#5d8cff; --violet:#7568ff; --cyan:#86b9ff; --red:#ff2845;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:
+      radial-gradient(900px 500px at 50% 5%,rgba(62,89,164,.12),transparent 70%),
+      radial-gradient(700px 500px at 10% 50%,rgba(47,92,180,.07),transparent 70%),
+      var(--bg);color:var(--text);font-family:Inter,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .nav{height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:50;background:rgba(5,7,11,.78);backdrop-filter:blur(18px)}
+    .navin{width:min(var(--max),calc(100% - 40px));margin:auto;display:flex;align-items:center}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;white-space:nowrap}
+    .brand small{font-size:13px;color:#7f899d;font-weight:500}
+    .mark{width:38px;height:38px;display:block;overflow:hidden;border-radius:50%}.mark img{display:block;width:38px;height:39px;object-fit:cover}
+    .links{display:flex;gap:38px;margin:auto;align-items:center}
+    .links a{font-size:14px;color:#c4cbd8;position:relative;padding:27px 0}
+    .links a:hover,.links a.active{color:#fff}
+    .links a.active:after{content:"";position:absolute;left:0;right:0;bottom:7px;height:2px;background:linear-gradient(90deg,var(--blue),#8a7bff);border-radius:2px}
+    .github{display:flex;align-items:center;gap:8px;font-size:14px;color:#e6ebf5}
+    .github svg{width:19px;height:19px;fill:currentColor}
+    .hero{min-height:720px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:70px 20px 55px}
+    .orb{position:absolute;width:560px;height:560px;top:35px;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(77,113,211,.08),transparent 62%);pointer-events:none}
+    .rings{position:absolute;width:500px;height:500px;top:55px;left:50%;transform:translateX(-50%);opacity:.7}
+    .rings span{position:absolute;inset:50%;border:1px solid rgba(145,178,255,.14);border-radius:50%;transform:translate(-50%,-50%);animation:pulse 5s ease-in-out infinite}
+    .rings span:nth-child(1){width:120px;height:120px}.rings span:nth-child(2){width:190px;height:190px;animation-delay:.5s}
+    .rings span:nth-child(3){width:270px;height:270px;animation-delay:1s}.rings span:nth-child(4){width:365px;height:365px;animation-delay:1.5s}
+    .rings span:nth-child(5){width:470px;height:470px;animation-delay:2s}
+    @keyframes pulse{50%{opacity:.3;transform:translate(-50%,-50%) scale(1.035)}}
+    .signal{position:absolute;left:-5vw;right:-5vw;bottom:90px;height:180px;opacity:.75}
+    .signal svg{width:100%;height:100%}
+    .hero-content{position:relative;z-index:2;margin-top:20px}
+    .hero-logo{width:250px;height:240px;margin:0 auto 12px;display:grid;place-items:center;position:relative;overflow:hidden}.hero-logo img{width:250px;height:240px;object-fit:cover;display:block}
+    @media(max-width:820px){
+      .links{display:none}.github{margin-left:auto}
+      .hero{min-height:650px}.hero-logo{width:210px;height:202px}.hero-logo img{width:210px;height:202px}
+    }
+    @media(max-width:480px){
+      .navin{width:calc(100% - 28px)}.brand small{display:none}.hero{padding-top:35px}.hero-content{margin-top:0}h1{font-size:40px}.desc{font-size:14px}.feature{padding:25px 12px}.feature h3{font-size:14px}.feature p{font-size:12px}
+      h2{font-size:31px}.cards{gap:12px}.card,.mode{padding:22px}
+    }
+  </style>
+</head>
+<body>
+<header class="nav">
+  <div class="navin">
+    <a class="brand" href="#home"><span class="mark"><img src="diting-logo-header.png" alt="谛听 Logo"></span><span>谛听</span><small>Diting</small></a>
+    <nav class="links">
+      <a class="active" href="#home">首页</a><a href="#download">下载</a><a href="#docs">文档</a><a href="#privacy">隐私</a><a href="#open">开源</a>
+    </nav>
+    <a class="github" href="https://github.com/shiyun-is-hub/Di_Ting" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .7a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.65-5.49 5.95.43.37.81 1.1.81 2.22v3.3c0 .32.22.69.83.57A12 12 0 0 0 12 .7Z"/></svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="orb"></div>
+    <div class="rings"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="signal">
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 105 C150 45,220 55,360 125 S600 190,760 95 S1020 55,1160 115 S1320 155,1440 72" fill="none" stroke="rgba(112,155,232,.32)" stroke-width="1.2"/>
+        <path d="M0 112 C150 60,240 72,360 132 S610 175,765 102 S1015 75,1165 123 S1330 145,1440 85" fill="none" stroke="rgba(102,135,204,.17)" stroke-width="1"/>
+        <path d="M0 92 C135 30,225 42,355 116 S605 205,775 88 S1035 40,1168 104 S1320 172,1440 65" fill="none" stroke="rgba(135,170,236,.12)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-logo"><img src="diting-logo-hero.png" alt="谛听 Logo"></div>
+      <h1>谛听</h1>
+      <p class="tagline">听见你的屏幕</p>
+      <p class="desc">一款专注于本地录制、隐私和用户控制的开源 Android 录屏工具。</p>
+      <div class="actions">
+        <a class="btn primary" href="#download">↓&nbsp; 立即下载</a>
+        <a class="btn" href="https://github.com/shiyun-is-hub/Di_Ting" target="_blank" rel="noopener">◉&nbsp; 查看源码</a>
+      </div>
+      <div class="meta">Android 8.0+ · Apache License 2.0 · 本地处理</div>
+    </div>
+  </section>
+
+  <div class="features">
+    <div class="feature-grid">
+      <div class="feature"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg></div><h3>强大的本地录屏</h3><p>基础录屏 / 增强录屏 / 系统声音与麦克风</p></div>
+      <div class="feature"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.3 8.1-8 10-4.7-1.9-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>隐私，由你掌控</h3><p>不上传 · 不收集 · 本地处理</p></div>
+      <div class="feature"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div><h3>为 Android 而生</h3><p>MediaProjection / Shizuku / Root</p></div>
+      <div class="feature"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 4 12l4 4M16 8l4 4-4 4M14 4l-4 16"/></svg></div><h3>开源 · 透明</h3><p>Apache License 2.0</p></div>
+    </div>
+  </div>
+
+  <section id="docs">
+    <div class="eyebrow">Designed for control</div>
+    <h2>把录屏交还给设备</h2>
+    <p class="lead">谛听把录制过程尽可能留在本机。没有云端中转，也不把你的录制内容变成“服务数据”。</p>
+    <div class="cards">
+      <article class="card"><div class="num">01 / LOCAL</div><h3>本地完成</h3><p>录制内容保存在你的 Android 设备上，默认输出到 <code>Movies/Diting</code>。</p></article>
+      <article class="card"><div class="num">02 / FLEXIBLE</div><h3>两种录制模式</h3><p>基础录屏面向所有用户；增强录屏为 Shizuku / Root 用户提供更强的采集能力。</p></article>
+      <article class="card"><div class="num">03 / PRECISE</div><h3>参数可控</h3><p>支持跟随屏幕、1080p、720p 等画质，以及 30fps / 60fps 帧率选择，并提供音频自检。</p></article>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="privacy">
+      <div>
+        <div class="eyebrow">Privacy first</div>
+        <h2>隐私不是设置项，是边界。</h2>
+        <p class="lead">根据项目隐私说明，谛听不申请网络权限，不上传录制文件，也不内嵌广告或第三方统计 SDK。</p>
+        <div class="checks">
+          <div class="check"><b>✓</b><span>不申请网络权限，不连接服务器</span></div>
+          <div class="check"><b>✓</b><span>不上传录制文件</span></div>
+          <div class="check"><b>✓</b><span>不收集设备信息、使用数据或个人信息</span></div>
+          <div class="check"><b>✓</b><span>不内嵌广告与第三方统计 SDK</span></div>
+        </div>
+      </div>
+      <div class="shield"><div class="shield-icon">✓</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Two ways to record</div>
+    <h2>从简单开始，也可以深入</h2>
+    <p class="lead">根据设备能力与使用习惯选择录制方式，不把 Root 作为普通用户的入场券。</p>
+    <div class="mode-grid">
+      <article class="mode">
+        <span class="badge">推荐 · 基础录屏</span>
+        <h3>MediaProjection</h3>
+        <p>使用 Android 系统标准录屏授权，免 Root、免 Shizuku。</p>
+        <ul><li>Android 10（API 29）及以上</li><li>系统标准“整个屏幕”授权</li><li>系统声音取决于厂商 ROM 对 AudioPlaybackCapture 的支持</li></ul>
+      </article>
+      <article class="mode">
+        <span class="badge">高级 · 增强录屏</span>
+        <h3>Shizuku / Root</h3>
+        <p>通过 shell 身份运行独立采集进程，获得更强的系统声音捕获能力。</p>
+        <ul><li>Android 8.0（API 26）及以上</li><li>需要 Shizuku 或设备已有 Root</li><li>支持悬浮控制、录制状态、计时与一键停止</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="download">
+      <div class="eyebrow">Get Diting</div>
+      <h2>下载谛听</h2>
+      <p class="lead" style="margin:0 auto 27px">获取公测版、源码与版本信息。当前下载入口指向项目官方 GitHub 仓库，正式 Release 发布后可直接切换为版本下载地址。</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/shiyun-is-hub/Di_Ting" target="_blank" rel="noopener">↓&nbsp; 获取公测版</a>
+        <a class="btn" href="https://github.com/shiyun-is-hub/Di_Ting" target="_blank" rel="noopener">GitHub 仓库</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="open">
+    <div class="eyebrow">Open source</div>
+    <h2>代码公开，改动也公开</h2>
+    <p class="lead">项目采用 Apache License 2.0。谛听在 ZeroRecorder 的部分底层录屏能力基础上进行了较大规模的二次开发与品牌重构，并保留相应上游版权与许可说明。</p>
+    <div class="cards">
+      <article class="card"><div class="num">LICENSE</div><h3>Apache 2.0</h3><p>允许使用、修改和再分发，但需遵守许可证及版权、修改声明等要求。</p></article>
+      <article class="card"><div class="num">ANDROID</div><h3>Material 3</h3><p>原生 Material 3 界面，支持深色、浅色与跟随系统主题。</p></article>
+      <article class="card"><div class="num">COMMUNITY</div><h3>Issue / PR</h3><p>欢迎提交问题与改进建议。崩溃日志也可从应用内反馈。</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <span>© 2026 谛听 Diting · 听见你的屏幕</span>
+    <span><a href="https://github.com/shiyun-is-hub/Di_Ting">GitHub</a> · <a href="mailto:shiyun_78@proton.me">联系我们</a> · Apache-2.0</span>
+  </div>
+</footer>
+
+<script>
+  const sections=[...document.querySelectorAll('main section[id]')];
+  const nav=[...document.querySelectorAll('.links a')];
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+      }
+    })
+  },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+  sections.forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
