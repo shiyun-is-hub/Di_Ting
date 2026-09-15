@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.18.1)
+project("zerocore")
+add_library(zerocore SHARED native_core.cpp)
+find_library(log-lib log)
+target_link_libraries(zerocore ${log-lib})

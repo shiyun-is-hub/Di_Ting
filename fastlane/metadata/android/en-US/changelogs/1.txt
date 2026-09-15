@@ -1,0 +1,9 @@
+Version 1.0.0 (DT-0001)
+
+First public release.
+
+• Basic screen recording based on MediaProjection (no Root required)
+• 1080p / 60fps high-definition recording with optional audio capture
+• Privacy policy consent flow
+• Fully offline; no network permission requested
+• Open source (Apache License 2.0)

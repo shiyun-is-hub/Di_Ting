@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+ <uses-feature android:glEsVersion="0x00030002" android:required="true" />
+ <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+ <uses-permission android:name="android.permission.MODIFY_AUDIO_ROUTING" />
+ 
+ <!-- 声明 Shizuku 权限 -->
+ <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
+ <queries><package android:name="moe.shizuku.privileged.api" /></queries>
+
+<application 
+    android:name=".RecorderApp"
+    android:hasCode="true"
+    android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:label="谛听"
+    android:theme="@style/Theme.Diting">
+
+ <meta-data android:name="moe.shizuku.client.V3_SUPPORT" android:value="true" />
+ 
+ <provider
+ android:name="rikka.shizuku.ShizukuProvider"
+ android:authorities="com.diting.recorder.shizuku"
+ android:multiprocess="false"
+ android:enabled="true"
+ android:exported="true"
+ android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+  <!-- [改动] 隐私政策（启动入口） -->
+  <activity android:name=".PrivacyActivity" android:exported="true">
+  <intent-filter>
+  <action android:name="android.intent.action.MAIN" />
+  <category android:name="android.intent.category.LAUNCHER" />
+  </intent-filter>
+  </activity>
+
+  <!-- [主界面] 仅应用内部跳转 -->
+  <activity android:name=".MainActivity" android:exported="false" />
+
+  <!-- [新增] 设置界面 -->
+  <activity android:name=".SettingsActivity" android:exported="false" />
+
+  <!-- [新增] 音频测试页 -->
+  <activity android:name=".AudioTestActivity" android:exported="false" />
+
+  <!-- [设置] 子页面 -->
+  <activity android:name=".RecordingSettingsActivity" android:exported="false" />
+  <activity android:name=".PermissionSettingsActivity" android:exported="false" />
+  <activity android:name=".AboutActivity" android:exported="false" />
+  <activity android:name=".ContactActivity" android:exported="false" />
+  <activity android:name=".PrivacyViewerActivity" android:exported="false" />
+  <activity android:name=".LicenseActivity" android:exported="false" />
+  <!-- [崩溃处理] 崩溃日志展示页：不进入最近任务，切换后不保留历史 -->
+  <activity
+      android:name=".crash.CrashActivity"
+      android:exported="false"
+      android:launchMode="singleTask"
+      android:excludeFromRecents="true"
+      android:noHistory="true"
+      android:theme="@style/Theme.Diting" />
+
+  <!-- [基础录屏] 免权限录屏前台服务 -->
+  <service android:name=".basic.BasicRecordService" android:exported="false" android:foregroundServiceType="mediaProjection|microphone" />
+  </application>
+</manifest>

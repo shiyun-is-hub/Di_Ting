@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开源许可 · 谛听 Diting</title>
+<meta name="description" content="谛听（Diting）Android 录屏工具的开源许可、修改声明与第三方组件许可说明。">
+<style>
+  :root{
+    --bg:#0d0d0f;
+    --card:#16161a;
+    --fg:#e8e8ea;
+    --fg-dim:#9a9aa2;
+    --line:#26262c;
+    --accent:#e23e3f;
+    --accent-soft:rgba(226,62,63,.12);
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#fafafa;
+      --card:#ffffff;
+      --fg:#1a1a1c;
+      --fg-dim:#6b6b73;
+      --line:#e6e6ea;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Roboto,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:48px 22px 80px}
+
+  header.hd{margin-bottom:40px}
+  .badge{
+    display:inline-block;
+    font-size:12px;letter-spacing:.08em;
+    color:var(--accent);
+    border:1px solid var(--accent);
+    border-radius:999px;
+    padding:3px 12px;
+    margin-bottom:18px;
+  }
+  h1{font-size:29px;line-height:1.3;margin:0 0 10px;font-weight:700;letter-spacing:-.01em}
+  .sub{color:var(--fg-dim);font-size:14px;margin:0}
+
+  h2{
+    font-size:19px;margin:44px 0 14px;font-weight:650;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  h2:first-of-type{margin-top:8px}
+  h3{font-size:15.5px;margin:26px 0 8px;font-weight:600;color:var(--fg)}
+  p{margin:10px 0}
+  ul{margin:10px 0;padding-left:22px}
+  li{margin:6px 0}
+  a{color:var(--accent);text-decoration:none;word-break:break-all}
+  a:hover{text-decoration:underline}
+  strong{font-weight:650}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.88em;background:var(--accent-soft);
+    padding:2px 6px;border-radius:5px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 20px;
+    margin:16px 0;
+  }
+  .card p:first-child{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+
+  .kv{display:grid;grid-template-columns:118px 1fr;gap:8px 14px;font-size:14.5px;margin:6px 0}
+  .kv dt{color:var(--fg-dim)}
+  .kv dd{margin:0}
+
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--fg-dim);font-weight:600;font-size:13px;letter-spacing:.02em}
+  td code{background:none;padding:0;font-size:.92em}
+
+  .note{
+    border-left:3px solid var(--accent);
+    background:var(--accent-soft);
+    padding:12px 16px;
+    border-radius:0 10px 10px 0;
+    font-size:14.5px;
+    margin:18px 0;
+  }
+
+  footer{
+    margin-top:56px;padding-top:22px;
+    border-top:1px solid var(--line);
+    color:var(--fg-dim);font-size:13px;
+    display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;
+  }
+
+  @media (max-width:480px){
+    .wrap{padding:32px 16px 60px}
+    h1{font-size:24px}
+    .kv{grid-template-columns:1fr;gap:2px 0}
+    .kv dt{margin-top:8px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hd">
+    <span class="badge">OPEN SOURCE</span>
+    <h1>开源许可与说明</h1>
+    <p class="sub">谛听（Diting）· Android 本地录屏工具</p>
+  </header>
+
+  <!-- ============ 1 ============ -->
+  <h2>一、项目简介</h2>
+  <p>
+    <strong>谛听（Diting）</strong>是一款面向 Android 的本地录屏工具，支持两种录制方式：
+  </p>
+  <ul>
+    <li><strong>基础录屏</strong>：基于系统 <code>MediaProjection</code>，免 Root、免 Shizuku，用户授权后即可录制。</li>
+    <li><strong>增强录屏</strong>：通过 <a href="https://shizuku.rikka.app/" target="_blank" rel="noopener">Shizuku</a> 以 shell 身份运行采集进程，可获得更强的系统声音捕获能力。</li>
+  </ul>
+  <p>
+    所有录制均在设备本地完成，<strong>不联网、不上传、不收集用户数据</strong>。详见应用内的《隐私政策》。
+  </p>
+
+  <!-- ============ 2 ============ -->
+  <h2>二、开源许可</h2>
+  <p>
+    本项目以 <strong>Apache License 2.0</strong> 协议开源。你可以在遵守该协议的前提下自由使用、修改和再分发本项目。
+  </p>
+  <div class="card">
+    <dl class="kv">
+      <dt>协议</dt><dd>Apache License 2.0</dd>
+      <dt>允许</dt><dd>商用、修改、分发、私用、专利授权</dd>
+      <dt>要求</dt><dd>保留版权与许可声明、标注修改内容</dd>
+      <dt>不提供</dt><dd>任何形式的担保或作者责任</dd>
+    </dl>
+  </div>
+  <p>
+    完整协议文本见项目根目录的 <code>LICENSE</code> 文件，或访问
+    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">apache.org/licenses/LICENSE-2.0</a>。
+  </p>
+
+  <!-- ============ 3 ============ -->
+  <h2>三、基于上游项目的修改声明</h2>
+
+  <div class="note">
+    依据 Apache License 2.0 第 4(b) 条要求，本节声明本衍生作品相对于上游原始项目所做的修改。
+  </div>
+
+  <p>
+    本项目的部分底层录屏能力（私有显示接口采集、OpenGL 渲染管线、硬编码器封装、Shizuku/shell 运行框架等）
+    源自开源项目 <strong>ZeroRecorder</strong>，在此基础上进行了较大规模的二次开发与品牌重构。
+  </p>
+
+  <h3>主要修改内容</h3>
+  <table>
+    <thead>
+      <tr><th>类别</th><th>具体修改</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>品牌重构</td>
+        <td>应用名由 ZeroRecorder 改为「谛听」；包名由 <code>com.zero.recorder</code> 改为 <code>com.diting.recorder</code>；重新设计应用图标。</td>
+      </tr>
+      <tr>
+        <td>界面重做</td>
+        <td>重写全部界面为原生 Material 3 风格；新增设置体系（录制项 / 权限项 / 关于三层结构）、音频自检页、联系与隐私政策页；图标统一改用 Tabler Icons。</td>
+      </tr>
+      <tr>
+        <td>新增基础录屏</td>
+        <td>新增基于 <code>MediaProjection</code> 的免权限录屏模式（免 Root / 免 Shizuku），并适配 Android 14+ 的「整个屏幕」授权流程。</td>
+      </tr>
+      <tr>
+        <td>JNI 兼容修复</td>
+        <td>修复因包名变更导致的 native 库 JNI 符号不匹配问题，通过旧包名桥接类保持符号兼容。</td>
+      </tr>
+      <tr>
+        <td>新增功能</td>
+        <td>新增全局崩溃日志捕获与反馈、通知权限引导、隐私政策首次同意门槛等。</td>
+      </tr>
+      <tr>
+        <td>构建优化</td>
+        <td>启用 R8 代码压缩与资源压缩，仅保留中/英语言资源，APK 体积大幅缩减；配置正式发布签名。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    上游项目原有的 <code>LICENSE</code> 文件与版权声明予以完整保留，未作删改。
+  </p>
+
+  <!-- ============ 4 ============ -->
+  <h2>四、第三方组件许可</h2>
+  <p>本项目使用了以下开源组件，在此一并致谢：</p>
+  <table>
+    <thead>
+      <tr><th>组件</th><th>用途</th><th>许可</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>AndroidX AppCompat</td><td>基础 UI 兼容</td><td>Apache-2.0</td></tr>
+      <tr><td>Material Components for Android</td><td>Material 设计组件</td><td>Apache-2.0</td></tr>
+      <tr><td>AndroidX Annotation</td><td>注解支持</td><td>Apache-2.0</td></tr>
+      <tr><td>Kotlin Standard Library</td><td>语言运行时</td><td>Apache-2.0</td></tr>
+      <tr><td>Kotlinx Coroutines</td><td>协程并发</td><td>Apache-2.0</td></tr>
+      <tr><td>Shizuku API / Provider</td><td>增强录屏权限框架</td><td>Apache-2.0</td></tr>
+      <tr><td>Tabler Icons</td><td>界面图标</td><td>MIT</td></tr>
+    </tbody>
+  </table>
+  <p>
+    各组件均保留其原始许可与版权归属。若需获取某个组件的完整许可文本，可通过下方联系方式与我们联系。
+  </p>
+
+  <!-- ============ 5 ============ -->
+  <h2>五、免责声明</h2>
+  <p>
+    本项目按「现状」提供，不附带任何明示或暗示的担保，包括但不限于对适销性、特定用途适用性及非侵权性的担保。
+    在任何情况下，作者或版权持有人均不对因本软件或本软件的使用或其他行为而产生的任何索赔、损害或其他责任负责。
+  </p>
+  <p>
+    本应用涉及系统级录屏能力，在不同设备与厂商 ROM 上的表现可能存在差异。请在使用前了解相关风险。
+  </p>
+
+  <!-- ============ 6 ============ -->
+  <h2>六、联系我们</h2>
+  <div class="card">
+    <dl class="kv">
+      <dt>反馈邮箱</dt><dd><a href="mailto:shiyun_78@proton.me">shiyun_78@proton.me</a></dd>
+      <dt>酷安账号</dt><dd>嘿鹰隼</dd>
+    </dl>
+  </div>
+
+  <footer>
+    <span>© 2026 谛听（Diting）</span>
+    <span>Apache License 2.0</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Diting is an open-source, privacy-focused Android screen recorder.
+
+Key features:
+
+• Fully offline: the app does not request the INTERNET permission. No network access, no uploads, no data collection.
+• No ads, no tracking: no analytics SDKs or advertising components whatsoever.
+• Open source: the complete source code is public, licensed under Apache License 2.0.
+• Basic recording: built on the system MediaProjection API, usable without Root or special permissions.
+• High-performance capture: supports 1080p / 60fps recording with optional audio capture.
+• Privacy first: a privacy policy is shown on first launch and requires explicit user consent.
+
+Technical notes:
+
+This app is a fork of the open-source project ZeroRecorder. Some advanced features (such as system-level recording optimizations) optionally depend on Shizuku, but basic recording is fully independent and works without Shizuku.
+
+Feedback: shiyun_78@proton.me
